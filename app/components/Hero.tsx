@@ -4,7 +4,7 @@ import Image from "next/image";
 import { GitlabIcon as GitHub, Linkedin, Mail, ArrowDown } from "lucide-react";
 import { motion } from "framer-motion";
 import { useRef } from "react";
-import Picture from "@/public/profile.jpg";
+import Picture from "@/public/optimized/profile.webp";
 
 const CodePattern = () => (
   <svg

@@ -4,21 +4,21 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import AnimatedSectionHeader from "./AnimatedSectionHeader";
 import { ExternalLink } from "lucide-react"; // Import Lucide icon
-import Rocket from "@/public/rocket.png";
-import Germanbank from "@/public/germanbank.png";
-import Solarwather from "@/public/solarweather.png";
-import JarvisAI from "@/public/JarvisAI.png";
-import ImageDetectorAI from "@/public/ImageDetectorAI.png"
-import AutoPharma from "@/public/AutopharmaAI.png"
-import vitashifa from "@/public/MediAI.png"
-import protein from "@/public/PPIGNN.png"
-import afny from "@/public/AfnyAI.png"
-import ionthefold from "@/public/ionthefold.png"
-import biosphereai from "@/public/biosphere.png"
-import salsabil from "@/public/salsabil.png"
-import shifamind from "@/public/shifamind.png"
-import cometsee from "@/public/cometsee.png"
-import jobhuntai from "@/public/jobhuntai.png"
+import Rocket from "@/public/optimized/rocket.webp";
+import Germanbank from "@/public/optimized/germanbank.webp";
+import Solarwather from "@/public/optimized/solarweather.webp";
+import JarvisAI from "@/public/optimized/JarvisAI.webp";
+import ImageDetectorAI from "@/public/optimized/ImageDetectorAI.webp"
+import AutoPharma from "@/public/optimized/AutopharmaAI.webp"
+import vitashifa from "@/public/optimized/MediAI.webp"
+import protein from "@/public/optimized/PPIGNN.webp"
+import afny from "@/public/optimized/AfnyAI.webp"
+import ionthefold from "@/public/optimized/ionthefold.webp"
+import biosphereai from "@/public/optimized/biosphere.webp"
+import salsabil from "@/public/optimized/salsabil.webp"
+import shifamind from "@/public/optimized/shifamind.webp"
+import cometsee from "@/public/optimized/cometsee.webp"
+import jobhuntai from "@/public/optimized/jobhuntai.webp"
 
 export default function KeyProjects() {
   const projects = [
