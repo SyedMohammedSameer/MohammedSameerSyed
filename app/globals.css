@@ -198,6 +198,15 @@ body {
     }
   }
 
+  @keyframes cardScan {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
   /* Magnetic hover effect */
   .magnetic-hover {
     transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
