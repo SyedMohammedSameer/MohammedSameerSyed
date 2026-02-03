@@ -1,9 +1,18 @@
 "use client";
 
 import Image from "next/image";
-import { GitlabIcon as GitHub, Linkedin, Mail, ArrowDown } from "lucide-react";
+import {
+  GitlabIcon as GitHub,
+  Linkedin,
+  Mail,
+  ArrowDown,
+  Brain,
+  Atom,
+  GraduationCap,
+  Rocket,
+  ExternalLink,
+} from "lucide-react";
 import { motion } from "framer-motion";
-import { useRef } from "react";
 import Picture from "@/public/optimized/profile.webp";
 
 const CodePattern = () => (
@@ -42,6 +51,61 @@ const CodePattern = () => (
 interface HeroProps {
   aboutRef: React.RefObject<{ show: () => void }>;
 }
+
+const bulletItems = [
+  {
+    Icon: Brain,
+    text: "Developed ShifaMind - State of the Art Explainable Healthcare AI",
+    href: "https://shifamind.netlify.app/",
+    isExternal: true,
+    accent: {
+      iconBg: "rgba(59, 130, 246, 0.15)",
+      iconColor: "#60a5fa",
+      glow: "rgba(59, 130, 246, 0.5)",
+      border: "rgba(59, 130, 246, 0.35)",
+      scan: "rgba(59, 130, 246, 0.18)",
+    },
+  },
+  {
+    Icon: Atom,
+    text: "Co-Founder at IonTheFold - Protein Folding AI",
+    href: "https://www.ionthefold.com/",
+    isExternal: true,
+    accent: {
+      iconBg: "rgba(16, 185, 129, 0.15)",
+      iconColor: "#34d399",
+      glow: "rgba(16, 185, 129, 0.5)",
+      border: "rgba(16, 185, 129, 0.35)",
+      scan: "rgba(16, 185, 129, 0.18)",
+    },
+  },
+  {
+    Icon: GraduationCap,
+    text: "ML Masters Graduate - University of Arizona",
+    href: "#education",
+    isExternal: false,
+    accent: {
+      iconBg: "rgba(139, 92, 246, 0.15)",
+      iconColor: "#a78bfa",
+      glow: "rgba(139, 92, 246, 0.5)",
+      border: "rgba(139, 92, 246, 0.35)",
+      scan: "rgba(139, 92, 246, 0.18)",
+    },
+  },
+  {
+    Icon: Rocket,
+    text: "Inventor of Archer - Patented Model Rocket Flight Computer",
+    href: "https://spalm.netlify.app/",
+    isExternal: true,
+    accent: {
+      iconBg: "rgba(245, 158, 11, 0.15)",
+      iconColor: "#fbbf24",
+      glow: "rgba(245, 158, 11, 0.5)",
+      border: "rgba(245, 158, 11, 0.35)",
+      scan: "rgba(245, 158, 11, 0.18)",
+    },
+  },
+];
 
 export default function Hero({ aboutRef }: HeroProps) {
   const handleLearnMore = () => {
@@ -103,20 +167,69 @@ export default function Hero({ aboutRef }: HeroProps) {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 leading-tight">
               Mohammed Sameer Syed
             </h1>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 md:mb-6 text-gray-700 dark:text-gray-300">
-              AI Engineer
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mb-5 md:mb-6 text-gray-600 dark:text-gray-300 max-w-xl mx-auto lg:mx-0 leading-snug">
+              AI Engineer &amp; Researcher
+              <br />
+              Building Models, Startups, and
+              Breakthroughs in Machine Learning
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-6 md:mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              AI Engineer and Researcher focused on applied machine learning and
-              deep learning. I build healthcare AI systems, multi-agent
-              architectures, multimodal LLMs, and RAG-driven pipelines, with
-              expertise in LLM inference, knowledge-grounded reasoning, and
-              explainable AI. I bring experience across academic labs and
-              early-stage startups, with contributions that include preprints,
-              startup co-founding, and a recently published patent in model
-              rocketry. Currently pursuing my Master’s at the University of
-              Arizona.
-            </p>
+
+            {/* Bullet Cards */}
+            <div className="flex flex-col gap-2.5 mb-6 md:mb-7">
+              {bulletItems.map((item, index) => {
+                const { Icon, text, href, isExternal, accent } = item;
+                return (
+                  <motion.a
+                    key={index}
+                    href={href}
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
+                    className="group flex items-center gap-3 p-3 rounded-xl cursor-pointer relative overflow-hidden glass-card"
+                    style={{ borderColor: accent.border }}
+                    initial={{ opacity: 0, x: -40 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 + index * 0.13 }}
+                    whileHover={{
+                      scale: 1.02,
+                      y: -2,
+                      boxShadow: `0 0 24px ${accent.glow}, 0 0 48px ${accent.glow.replace("0.5", "0.15")}`,
+                    }}
+                  >
+                    {/* Scan-line shimmer */}
+                    <div
+                      className="absolute inset-0 pointer-events-none"
+                      style={{
+                        background: `linear-gradient(90deg, transparent 0%, ${accent.scan} 50%, transparent 100%)`,
+                        backgroundSize: "200% 100%",
+                        animation: `cardScan ${3.5 + index * 0.6}s linear infinite`,
+                      }}
+                    />
+
+                    {/* Icon */}
+                    <div
+                      className="relative z-10 flex-shrink-0 p-2 rounded-lg transition-transform duration-300 group-hover:scale-110"
+                      style={{ background: accent.iconBg }}
+                    >
+                      <Icon className="w-5 h-5" style={{ color: accent.iconColor }} />
+                    </div>
+
+                    {/* Text */}
+                    <span className="relative z-10 text-sm sm:text-base font-medium text-gray-700 dark:text-gray-200 text-left flex-1">
+                      {text}
+                    </span>
+
+                    {/* Link arrow */}
+                    <div className="relative z-10 flex-shrink-0 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300">
+                      <ExternalLink
+                        className="w-4 h-4"
+                        style={{ color: accent.iconColor }}
+                      />
+                    </div>
+                  </motion.a>
+                );
+              })}
+            </div>
+
             <div className="flex justify-center lg:justify-start space-x-3 md:space-x-4 mb-6 md:mb-8">
               <motion.a
                 href="https://github.com/SyedMohammedSameer"
