@@ -31,7 +31,7 @@ const About = forwardRef<AboutRef>((props, ref) => {
   const stats = [
     { Icon: Award, label: "Patent", value: "1", iconColor: "#fbbf24", iconBg: "rgba(245, 158, 11, 0.12)" },
     { Icon: Code2, label: "Projects", value: "15+", iconColor: "#60a5fa", iconBg: "rgba(59, 130, 246, 0.12)" },
-    { Icon: Building2, label: "Startup", value: "1", iconColor: "#34d399", iconBg: "rgba(16, 185, 129, 0.12)" },
+    { Icon: Building2, label: "Startup", value: "2", iconColor: "#34d399", iconBg: "rgba(16, 185, 129, 0.12)" },
     { Icon: BookOpen, label: "Degree", value: "Master's", iconColor: "#a78bfa", iconBg: "rgba(139, 92, 246, 0.12)" },
   ];
 
