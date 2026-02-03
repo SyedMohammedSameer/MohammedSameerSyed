@@ -55,7 +55,7 @@ interface HeroProps {
 const bulletItems = [
   {
     Icon: Brain,
-    text: "Developed ShifaMind — State of the Art Explainable Healthcare AI",
+    text: "Developed ShifaMind - State of the Art Explainable Healthcare AI",
     href: "https://shifamind.netlify.app/",
     isExternal: true,
     accent: {
@@ -68,7 +68,7 @@ const bulletItems = [
   },
   {
     Icon: Atom,
-    text: "Co-Founder & AI Engineer at IonTheFold — Protein Folding AI",
+    text: "Co-Founder at IonTheFold - Protein Folding AI",
     href: "https://www.ionthefold.com/",
     isExternal: true,
     accent: {
@@ -81,7 +81,7 @@ const bulletItems = [
   },
   {
     Icon: GraduationCap,
-    text: "ML Masters Graduate — University of Arizona",
+    text: "ML Masters Graduate - University of Arizona",
     href: "#education",
     isExternal: false,
     accent: {
@@ -94,7 +94,7 @@ const bulletItems = [
   },
   {
     Icon: Rocket,
-    text: "Inventor of Archer — Patented Model Rocket Flight Computer",
+    text: "Inventor of Archer - Patented Model Rocket Flight Computer",
     href: "https://spalm.netlify.app/",
     isExternal: true,
     accent: {
@@ -168,7 +168,9 @@ export default function Hero({ aboutRef }: HeroProps) {
               Mohammed Sameer Syed
             </h1>
             <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mb-5 md:mb-6 text-gray-600 dark:text-gray-300 max-w-xl mx-auto lg:mx-0 leading-snug">
-              AI Engineer &amp; Researcher — Building Models, Startups, and
+              AI Engineer &amp; Researcher
+              <br />
+              Building Models, Startups, and
               Breakthroughs in Machine Learning
             </h2>
 
